@@ -11,5 +11,6 @@ int main()
 	
     printf("Result for float: %f\n", f);
     printf("Result for double: %g\n", d);
+	
 return 0;
 }
