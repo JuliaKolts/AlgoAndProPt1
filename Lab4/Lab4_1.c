@@ -4,43 +4,42 @@
 
 int main(void)
 {
-    int array[150];
+    int array[100];
     int n = 0, m = 0, tmp = 0, min_index = 0, max_index = 0; 
-    float average, sum = 0.0;
+    double average, sum = 0.0;
     
-    printf("Array length: ");    scanf("%i", &n);
+    printf("Array length: ");		scanf("%i", &n);
     printf("Max element value: ");  scanf("%i", &m);
+	
     srand(time(NULL));
-    
     printf("Array:\n");
     
     for(int i = 0; i < n; i++)
     {
-        array[i] = rand()%m;
-        printf("%i ", array[i]);
+    	array[i] = rand()%m;
+        printf("%i", array[i]);
         sum += array[i];
     }
+	
     printf("\n");
-    printf("Sum: %.2f\n", sum);
-    average = sum / n;
+    printf("Sum: %.0f\n", sum);
+    
+	average = sum / n;
     printf("Average: %.2f\n", average);
   
     int min = array[0], max = array[0];	
-    
-    for (int l = 0; l < n; l++)	
+    for (int j = 0; j < n; j++)	
     {
-        if (array[l] > max)
+        if (array[j] > max)
         {
-            max = array[l];
-            max_index = l;
+            max = array[j];
+            max_index = j;
         }
-    }
-    for (int k = 0; k < n; k++)
-    {
-        if (array[k] < min)
+    
+        if (array[j] < min)
         {
-            min = array[k];
-            min_index = k;
+            min = array[j];
+            min_index = j;
         }
     }
     printf("Max: %i\n", max);
@@ -51,17 +50,18 @@ int main(void)
     array[max_index] = tmp;
     
     printf("Min and max elements swapped:\n");
-        for(int y = 0; y < n; y++)
+        for(int k = 0; k < n; k++)
         {
-            printf("%i ", array[y]);
+            printf("%i ", array[k]);
         }
-    printf("\n");
 	
+    printf("\n");
     printf("Without elements that are 10%% bigger than average: \n");
-    for(int j = 0; j < n; j++)
+	
+    for(int a = 0; a < n; a++)
     {
-        if (array[j] < average * 1.1)
-            printf("%i ", array[j]);
+        if (array[a] < average * 1.1)
+            printf("%i ", array[a]);
         else
             printf("");
     }
