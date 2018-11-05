@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    int array[100];
+    int array[100], array2[100];
     int n = 0, m = 0, tmp = 0, min_index = 0, max_index = 0; 
     double average, sum = 0.0;
     
@@ -61,9 +61,11 @@ int main(void)
     for(int a = 0; a < n; a++)
     {
         if (array[a] < average * 1.1)
-            printf("%i ", array[a]);
+          	array2[a] = array[a];
         else
-            printf("");
+            continue;
+		
+		printf("%i ", array2[a]);
     }
     printf("\n");
 }
